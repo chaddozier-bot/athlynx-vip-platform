@@ -1,0 +1,21 @@
+{
+  "name": "athlynx-vip-platform",
+  "version": "1.0.0",
+  "description": "Athlynx VIP Platform - Static Landing Page",
+  "main": "index.html",
+  "scripts": {
+    "start": "serve . -p ${PORT:-3000}",
+    "dev": "serve . -p 3000"
+  },
+  "keywords": [
+    "athlynx",
+    "nil",
+    "sports",
+    "vip"
+  ],
+  "author": "Dozier Holdings Group",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "serve": "^14.2.1"
+  }
+}
