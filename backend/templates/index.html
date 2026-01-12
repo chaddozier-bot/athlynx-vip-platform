@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🦁 ATHLYNX AI - Dreams Do Come True 2026!</title>
+    <meta name="description" content="ATHLYNX AI - The Ultimate NIL Platform for College Athletes. Transfer Portal, NIL Vault, Social Feed. Dreams Do Come True 2026!">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/static/favicon.png">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #FF6B00;
+            --primary-dark: #E55A00;
+            --secondary: #1A1A2E;
+            --accent: #FFD700;
+            --success: #00C853;
+            --danger: #FF1744;
+            --text: #FFFFFF;
+            --text-muted: #A0A0A0;
+            --bg-dark: #0A0A0F;
+            --bg-card: #16162A;
+            --border: #2A2A4A;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-dark);
+            color: var(--text);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        
+        /* Animated Background */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(135deg, var(--bg-dark) 0%, var(--secondary) 50%, var(--bg-dark) 100%);
+        }
+        
+        .bg-animation::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 20% 80%, rgba(255, 107, 0, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(255, 215, 0, 0.1) 0%, transparent 50%);
+            animation: pulse 8s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+        
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(10, 10, 15, 0.9);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .logo span {
+            color: var(--accent);
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        .nav-cta {
+            background: var(--primary);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .nav-cta:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+        
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 6rem 2rem 4rem;
+        }
+        
+        .hero-badge {
+            background: rgba(255, 107, 0, 0.2);
+            color: var(--primary);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            border: 1px solid var(--primary);
+        }
+        
+        .hero h1 {
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, var(--text) 0%, var(--primary) 50%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin-bottom: 3rem;
+            line-height: 1.6;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .btn {
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            cursor: pointer;
+            border: none;
+        }
+        
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(255, 107, 0, 0.3);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--text);
+            border: 2px solid var(--border);
+        }
+        
+        .btn-secondary:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+        
+        /* Waitlist Counter */
+        .waitlist-counter {
+            margin-top: 3rem;
+            padding: 2rem;
+            background: var(--bg-card);
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            text-align: center;
+        }
+        
+        .counter-number {
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--primary);
+            display: block;
+        }
+        
+        .counter-label {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+        }
+        
+        .counter-progress {
+            width: 100%;
+            height: 8px;
+            background: var(--border);
+            border-radius: 4px;
+            margin-top: 1rem;
+            overflow: hidden;
+        }
+        
+        .counter-progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            border-radius: 4px;
+            transition: width 1s ease;
+        }
+        
+        /* Features Section */
+        .features {
+            padding: 6rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            margin-bottom: 4rem;
+            font-size: 1.125rem;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .feature-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 2rem;
+            transition: all 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+            box-shadow: 0 20px 40px rgba(255, 107, 0, 0.1);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+        }
+        
+        .feature-card p {
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+        
+        /* Waitlist Form */
+        .waitlist-section {
+            padding: 6rem 2rem;
+            background: var(--bg-card);
+        }
+        
+        .waitlist-form {
+            max-width: 500px;
+            margin: 0 auto;
+            background: var(--secondary);
+            padding: 3rem;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            background: var(--bg-dark);
+            color: var(--text);
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+        
+        .form-submit {
+            width: 100%;
+            padding: 1rem;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .form-submit:hover {
+            background: var(--primary-dark);
+        }
+        
+        /* Footer */
+        footer {
+            padding: 4rem 2rem;
+            text-align: center;
+            border-top: 1px solid var(--border);
+        }
+        
+        .footer-logo {
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .footer-tagline {
+            color: var(--accent);
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+        
+        .footer-copyright {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            nav {
+                padding: 1rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .hero {
+                padding: 5rem 1rem 3rem;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+            
+            .waitlist-form {
+                padding: 2rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-animation"></div>
+    
+    <!-- Navigation -->
+    <nav>
+        <a href="/" class="logo">🦁 ATHLYNX<span>AI</span></a>
+        <ul class="nav-links">
+            <li><a href="#features">Features</a></li>
+            <li><a href="#waitlist">Join Waitlist</a></li>
+            <li><a href="/api/docs">API Docs</a></li>
+        </ul>
+        <a href="#waitlist" class="nav-cta">Get Early Access</a>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <span class="hero-badge">🚀 Launching February 1, 2026</span>
+        <h1>The Future of<br>College Athletics</h1>
+        <p>ATHLYNX AI is the ultimate platform for college athletes. Manage your NIL deals, navigate the transfer portal, and build your brand. Dreams Do Come True 2026!</p>
+        
+        <div class="hero-buttons">
+            <a href="#waitlist" class="btn btn-primary">Join VIP Waitlist</a>
+            <a href="#features" class="btn btn-secondary">Learn More</a>
+        </div>
+        
+        <div class="waitlist-counter">
+            <span class="counter-number" id="waitlist-count">{{ waitlist_count or 0 }}</span>
+            <span class="counter-label">Athletes on the VIP Waitlist (10,000 Founding Members)</span>
+            <div class="counter-progress">
+                <div class="counter-progress-bar" style="width: {{ (waitlist_count or 0) / 100 }}%"></div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <h2 class="section-title">Everything You Need</h2>
+        <p class="section-subtitle">One platform to manage your entire athletic career</p>
+        
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">💰</div>
+                <h3>NIL Vault</h3>
+                <p>Track and manage all your Name, Image, and Likeness deals in one secure place. Get matched with brands that fit your personal brand.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">🔄</div>
+                <h3>Transfer Portal</h3>
+                <p>Navigate the transfer portal with confidence. Connect with coaches, explore opportunities, and make informed decisions about your future.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">📱</div>
+                <h3>Social Feed</h3>
+                <p>Build your personal brand with our athlete-focused social platform. Share highlights, connect with fans, and grow your following.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h3>Analytics Dashboard</h3>
+                <p>Real-time insights into your performance, engagement, and NIL value. Make data-driven decisions about your career.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">💬</div>
+                <h3>Direct Messaging</h3>
+                <p>Secure, verified messaging with coaches, brands, and agents. No spam, no scams - just real opportunities.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">🛡️</div>
+                <h3>Military-Grade Security</h3>
+                <p>Your data is protected with enterprise-level security. Triple-channel verification keeps your account safe.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Waitlist Section -->
+    <section class="waitlist-section" id="waitlist">
+        <h2 class="section-title">Join the VIP Waitlist</h2>
+        <p class="section-subtitle">Be one of the first 10,000 founding members</p>
+        
+        <form class="waitlist-form" id="waitlist-form">
+            <div class="form-group">
+                <label for="full_name">Full Name *</label>
+                <input type="text" id="full_name" name="full_name" required placeholder="Your full name">
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email" required placeholder="your@email.com">
+            </div>
+            
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567">
+            </div>
+            
+            <div class="form-group">
+                <label for="role">I am a...</label>
+                <select id="role" name="role">
+                    <option value="">Select your role</option>
+                    <option value="athlete">College Athlete</option>
+                    <option value="high_school">High School Athlete</option>
+                    <option value="coach">Coach</option>
+                    <option value="agent">Agent/Representative</option>
+                    <option value="brand">Brand/Business</option>
+                    <option value="fan">Fan/Supporter</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="sport">Primary Sport</label>
+                <select id="sport" name="sport">
+                    <option value="">Select your sport</option>
+                    <option value="football">Football</option>
+                    <option value="basketball">Basketball</option>
+                    <option value="baseball">Baseball</option>
+                    <option value="soccer">Soccer</option>
+                    <option value="volleyball">Volleyball</option>
+                    <option value="softball">Softball</option>
+                    <option value="track">Track & Field</option>
+                    <option value="swimming">Swimming</option>
+                    <option value="tennis">Tennis</option>
+                    <option value="golf">Golf</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            
+            <button type="submit" class="form-submit">🦁 Join the Pride</button>
+        </form>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-logo">🦁 ATHLYNX AI</div>
+        <div class="footer-tagline">Dreams Do Come True 2026!</div>
+        
+        <div class="footer-links">
+            <a href="/api/docs">API Documentation</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Contact Us</a>
+        </div>
+        
+        <p class="footer-copyright">
+            © 2026 ATHLYNX AI Corporation. All rights reserved.<br>
+            Athlynx-AI-Start-Up-Launch-All-Phase-Beginning-Phase-1-2026-#14
+        </p>
+    </footer>
+    
+    <script>
+        // Waitlist form submission
+        document.getElementById('waitlist-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const formData = {
+                full_name: document.getElementById('full_name').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                role: document.getElementById('role').value,
+                sport: document.getElementById('sport').value
+            };
+            
+            try {
+                const response = await fetch('/api/waitlist/join', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(formData)
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    alert(`🦁 Welcome to ATHLYNX!\n\n${data.message}\n\nYour referral code: ${data.referral_code}`);
+                    document.getElementById('waitlist-form').reset();
+                    
+                    // Update counter
+                    const counter = document.getElementById('waitlist-count');
+                    counter.textContent = data.position;
+                } else {
+                    alert('Error: ' + (data.detail || data.message || 'Something went wrong'));
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Error joining waitlist. Please try again.');
+            }
+        });
+        
+        // Fetch current waitlist count
+        async function updateWaitlistCount() {
+            try {
+                const response = await fetch('/api/waitlist/count');
+                const data = await response.json();
+                
+                const counter = document.getElementById('waitlist-count');
+                counter.textContent = data.count;
+                
+                const progressBar = document.querySelector('.counter-progress-bar');
+                progressBar.style.width = `${data.percent_full}%`;
+            } catch (error) {
+                console.error('Error fetching waitlist count:', error);
+            }
+        }
+        
+        // Update count on page load
+        updateWaitlistCount();
+        
+        // Update count every 30 seconds
+        setInterval(updateWaitlistCount, 30000);
+    </script>
+</body>
+</html>
