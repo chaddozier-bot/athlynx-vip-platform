@@ -3,407 +3,575 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🦁 ATHLYNX AI - Dreams Do Come True 2026!</title>
-    <meta name="description" content="ATHLYNX AI - The Ultimate NIL Platform for College Athletes. Transfer Portal, NIL Vault, Social Feed. Dreams Do Come True 2026!">
+    <title>🦁 ATHLYNX: The Perfect Storm - {{ title }}</title>
+    <meta name="description" content="ATHLYNX - The Athlete's Playbook. 10 Powerful Apps. One Platform. Unlimited Potential. Dreams Do Come True 2026!">
+    <meta name="keywords" content="ATHLYNX, NIL, athlete, sports, transfer portal, college athletics, Dozier Holdings Group">
     
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="/static/favicon.png">
+    <!-- Open Graph -->
+    <meta property="og:title" content="ATHLYNX: The Perfect Storm">
+    <meta property="og:description" content="The Athlete's Playbook - 10 Powerful Apps. One Platform. Unlimited Potential.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://athlynxapp.vip">
     
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --primary: #FF6B00;
-            --primary-dark: #E55A00;
-            --secondary: #1A1A2E;
-            --accent: #FFD700;
-            --success: #00C853;
-            --danger: #FF1744;
-            --text: #FFFFFF;
-            --text-muted: #A0A0A0;
-            --bg-dark: #0A0A0F;
-            --bg-card: #16162A;
-            --border: #2A2A4A;
+            --primary-dark: #0A1628;
+            --primary-blue: #0066FF;
+            --accent-cyan: #00D4FF;
+            --accent-gold: #FFD700;
+            --gradient-cyan: linear-gradient(135deg, #00D4FF 0%, #0099FF 100%);
+            --gradient-blue: linear-gradient(135deg, #0066FF 0%, #00D4FF 100%);
+            --text-white: #FFFFFF;
+            --text-muted: #A0B4C8;
+            --border-color: #1E3A5F;
+            --card-bg: rgba(30, 58, 95, 0.5);
         }
         
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         
         body {
             font-family: 'Inter', sans-serif;
-            background: var(--bg-dark);
-            color: var(--text);
+            background: var(--primary-dark);
+            color: var(--text-white);
             min-height: 100vh;
             overflow-x: hidden;
         }
         
-        /* Animated Background */
-        .bg-animation {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            background: linear-gradient(135deg, var(--bg-dark) 0%, var(--secondary) 50%, var(--bg-dark) 100%);
+        /* Top Banner */
+        .top-banner {
+            background: var(--primary-dark);
+            padding: 0.5rem;
+            text-align: center;
+            font-size: 0.75rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--text-muted);
         }
         
-        .bg-animation::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at 20% 80%, rgba(255, 107, 0, 0.1) 0%, transparent 50%),
-                        radial-gradient(circle at 80% 20%, rgba(255, 215, 0, 0.1) 0%, transparent 50%);
-            animation: pulse 8s ease-in-out infinite;
-        }
-        
-        @keyframes pulse {
-            0%, 100% { opacity: 0.5; }
-            50% { opacity: 1; }
-        }
-        
-        /* Navigation */
-        nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
+        /* Header */
+        header {
+            background: linear-gradient(180deg, var(--primary-dark) 0%, #0D1E33 100%);
             padding: 1rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: rgba(10, 10, 15, 0.9);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            border-bottom: 1px solid var(--border);
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
         }
         
         .logo {
-            font-size: 1.5rem;
-            font-weight: 900;
-            color: var(--primary);
-            text-decoration: none;
+            background: var(--gradient-cyan);
+            padding: 0.75rem 1.5rem;
+            border-radius: 12px;
             display: flex;
             align-items: center;
             gap: 0.5rem;
         }
         
-        .logo span {
-            color: var(--accent);
+        .logo-icon {
+            font-size: 1.5rem;
         }
         
-        .nav-links {
+        .logo-text {
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 800;
+            font-size: 1.25rem;
+            color: var(--primary-dark);
+        }
+        
+        .logo-tagline {
+            font-size: 0.6rem;
+            color: var(--primary-dark);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .parent-company {
+            color: var(--accent-cyan);
+            font-size: 0.875rem;
+        }
+        
+        .parent-company a {
+            color: var(--accent-gold);
+            text-decoration: none;
+        }
+        
+        .nav-buttons {
             display: flex;
-            gap: 2rem;
-            list-style: none;
+            gap: 1rem;
         }
         
-        .nav-links a {
-            color: var(--text);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-        
-        .nav-links a:hover {
-            color: var(--primary);
-        }
-        
-        .nav-cta {
-            background: var(--primary);
-            color: white;
+        .btn {
             padding: 0.75rem 1.5rem;
-            border-radius: 50px;
-            text-decoration: none;
+            border-radius: 8px;
             font-weight: 600;
+            cursor: pointer;
             transition: all 0.3s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
         }
         
-        .nav-cta:hover {
-            background: var(--primary-dark);
+        .btn-founders {
+            background: var(--accent-gold);
+            color: var(--primary-dark);
+            border: none;
+        }
+        
+        .btn-portal {
+            background: transparent;
+            color: var(--text-white);
+            border: 2px solid var(--text-white);
+        }
+        
+        .btn:hover {
             transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(0, 212, 255, 0.3);
+        }
+        
+        /* Status Bar */
+        .status-bar {
+            background: var(--gradient-cyan);
+            padding: 0.75rem;
+            text-align: center;
+            color: var(--primary-dark);
+            font-weight: 600;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .status-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .status-dot {
+            width: 10px;
+            height: 10px;
+            background: #00FF00;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        
+        /* Update Notice */
+        .update-notice {
+            background: var(--primary-blue);
+            padding: 0.75rem;
+            text-align: center;
+            font-size: 0.875rem;
         }
         
         /* Hero Section */
         .hero {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            padding: 4rem 2rem;
             text-align: center;
-            padding: 6rem 2rem 4rem;
+            background: radial-gradient(ellipse at center, #0D2847 0%, var(--primary-dark) 70%);
         }
         
-        .hero-badge {
-            background: rgba(255, 107, 0, 0.2);
-            color: var(--primary);
+        .hero-card {
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            background: linear-gradient(135deg, #1E4D7B 0%, #0D2847 100%);
+            border-radius: 20px;
+            padding: 3rem;
+            border: 2px solid var(--accent-cyan);
+            box-shadow: 0 20px 60px rgba(0, 212, 255, 0.2);
+        }
+        
+        .hero-logo {
+            background: var(--gradient-cyan);
+            padding: 1rem 2rem;
+            border-radius: 15px;
+            display: inline-block;
+            margin-bottom: 1.5rem;
+        }
+        
+        .hero-logo h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5rem;
+            color: var(--primary-dark);
+        }
+        
+        .hero-logo p {
+            font-size: 0.875rem;
+            color: var(--primary-dark);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .trainer-badge {
+            background: var(--gradient-cyan);
+            color: var(--primary-dark);
             padding: 0.5rem 1.5rem;
             border-radius: 50px;
+            font-weight: 700;
             font-size: 0.875rem;
-            font-weight: 600;
-            margin-bottom: 2rem;
-            border: 1px solid var(--primary);
+            display: inline-block;
+            margin-bottom: 1rem;
         }
         
-        .hero h1 {
-            font-size: clamp(2.5rem, 8vw, 5rem);
-            font-weight: 900;
-            line-height: 1.1;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(135deg, var(--text) 0%, var(--primary) 50%, var(--accent) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        .hero p {
+        .hero-tagline {
             font-size: 1.25rem;
             color: var(--text-muted);
-            max-width: 600px;
-            margin-bottom: 3rem;
-            line-height: 1.6;
+            margin-bottom: 0.5rem;
         }
         
-        .hero-buttons {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-            justify-content: center;
+        .hero-subtitle {
+            color: var(--accent-cyan);
+            font-style: italic;
         }
         
-        .btn {
-            padding: 1rem 2.5rem;
-            border-radius: 50px;
-            font-size: 1rem;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s;
-            cursor: pointer;
-            border: none;
-        }
-        
-        .btn-primary {
-            background: var(--primary);
-            color: white;
-        }
-        
-        .btn-primary:hover {
+        /* Vision Section */
+        .vision-section {
+            padding: 4rem 2rem;
+            text-align: center;
             background: var(--primary-dark);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(255, 107, 0, 0.3);
         }
         
-        .btn-secondary {
-            background: transparent;
-            color: var(--text);
-            border: 2px solid var(--border);
+        .vision-badge {
+            background: rgba(255, 215, 0, 0.2);
+            color: var(--accent-gold);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+            display: inline-block;
         }
         
-        .btn-secondary:hover {
-            border-color: var(--primary);
-            color: var(--primary);
+        .vision-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2rem;
+            color: var(--accent-gold);
+            margin-bottom: 1rem;
         }
         
-        /* Waitlist Counter */
-        .waitlist-counter {
-            margin-top: 3rem;
+        .vision-subtitle {
+            color: var(--text-muted);
+            font-size: 1.25rem;
+        }
+        
+        /* VIP Code Section */
+        .vip-code-section {
             padding: 2rem;
-            background: var(--bg-card);
-            border-radius: 20px;
-            border: 1px solid var(--border);
             text-align: center;
         }
         
-        .counter-number {
-            font-size: 3rem;
-            font-weight: 900;
-            color: var(--primary);
-            display: block;
-        }
-        
-        .counter-label {
-            color: var(--text-muted);
-            font-size: 0.875rem;
-        }
-        
-        .counter-progress {
-            width: 100%;
-            height: 8px;
-            background: var(--border);
-            border-radius: 4px;
-            margin-top: 1rem;
-            overflow: hidden;
-        }
-        
-        .counter-progress-bar {
-            height: 100%;
-            background: linear-gradient(90deg, var(--primary), var(--accent));
-            border-radius: 4px;
-            transition: width 1s ease;
-        }
-        
-        /* Features Section */
-        .features {
-            padding: 6rem 2rem;
-            max-width: 1200px;
+        .vip-code-box {
+            background: var(--card-bg);
+            border: 2px dashed var(--accent-cyan);
+            border-radius: 15px;
+            padding: 1.5rem;
+            max-width: 400px;
             margin: 0 auto;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .vip-code-box:hover {
+            border-color: var(--accent-gold);
+            background: rgba(255, 215, 0, 0.1);
+        }
+        
+        /* Apps Grid */
+        .apps-section {
+            padding: 4rem 2rem;
+            background: linear-gradient(180deg, var(--primary-dark) 0%, #0D2847 100%);
         }
         
         .section-title {
             text-align: center;
-            font-size: 2.5rem;
-            font-weight: 800;
-            margin-bottom: 1rem;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
         }
         
         .section-subtitle {
             text-align: center;
             color: var(--text-muted);
-            margin-bottom: 4rem;
-            font-size: 1.125rem;
+            margin-bottom: 3rem;
         }
         
-        .features-grid {
+        .apps-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1.5rem;
+            max-width: 1000px;
+            margin: 0 auto;
         }
         
-        .feature-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            padding: 2rem;
+        .app-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 15px;
+            padding: 1.5rem;
+            text-align: center;
             transition: all 0.3s;
+            cursor: pointer;
         }
         
-        .feature-card:hover {
+        .app-card:hover {
             transform: translateY(-5px);
-            border-color: var(--primary);
-            box-shadow: 0 20px 40px rgba(255, 107, 0, 0.1);
+            border-color: var(--accent-cyan);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2);
         }
         
-        .feature-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-        
-        .feature-card h3 {
-            font-size: 1.25rem;
-            font-weight: 700;
+        .app-icon {
+            font-size: 2rem;
             margin-bottom: 0.75rem;
         }
         
-        .feature-card p {
+        .app-name {
+            font-weight: 600;
+            font-size: 0.875rem;
+        }
+        
+        /* Countdown Section */
+        .countdown-section {
+            padding: 4rem 2rem;
+            text-align: center;
+            background: radial-gradient(ellipse at center, #0D2847 0%, var(--primary-dark) 70%);
+        }
+        
+        .countdown-card {
+            max-width: 600px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 3rem;
+            border: 2px solid var(--accent-cyan);
+        }
+        
+        .countdown-logo {
+            background: var(--gradient-cyan);
+            padding: 1rem 2rem;
+            border-radius: 15px;
+            display: inline-block;
+            margin-bottom: 2rem;
+        }
+        
+        .countdown-logo h2 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5rem;
+            color: var(--primary-dark);
+        }
+        
+        .countdown-label {
             color: var(--text-muted);
-            line-height: 1.6;
+            font-size: 0.875rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .countdown-date {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5rem;
+            color: var(--accent-gold);
+            margin-bottom: 2rem;
+        }
+        
+        .countdown-timer {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .countdown-item {
+            text-align: center;
+        }
+        
+        .countdown-number {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--text-white);
+            background: rgba(0, 212, 255, 0.2);
+            padding: 1rem 1.5rem;
+            border-radius: 10px;
+            min-width: 80px;
+            display: block;
+        }
+        
+        .countdown-unit {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            margin-top: 0.5rem;
+        }
+        
+        .founding-spots {
+            background: rgba(255, 215, 0, 0.2);
+            color: var(--accent-gold);
+            padding: 1rem;
+            border-radius: 10px;
+            font-weight: 600;
         }
         
         /* Waitlist Form */
         .waitlist-section {
-            padding: 6rem 2rem;
-            background: var(--bg-card);
+            padding: 4rem 2rem;
+            background: var(--primary-dark);
         }
         
         .waitlist-form {
             max-width: 500px;
             margin: 0 auto;
-            background: var(--secondary);
-            padding: 3rem;
+            background: var(--card-bg);
             border-radius: 20px;
-            border: 1px solid var(--border);
+            padding: 2rem;
+            border: 1px solid var(--border-color);
         }
         
-        .form-group {
+        .form-title {
+            text-align: center;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.25rem;
             margin-bottom: 1.5rem;
         }
         
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
+        .form-group {
+            margin-bottom: 1rem;
         }
         
         .form-group input,
         .form-group select {
             width: 100%;
             padding: 1rem;
-            border: 1px solid var(--border);
+            border: 1px solid var(--border-color);
             border-radius: 10px;
-            background: var(--bg-dark);
-            color: var(--text);
+            background: rgba(10, 22, 40, 0.8);
+            color: var(--text-white);
             font-size: 1rem;
-            transition: border-color 0.3s;
         }
         
         .form-group input:focus,
         .form-group select:focus {
             outline: none;
-            border-color: var(--primary);
+            border-color: var(--accent-cyan);
         }
         
-        .form-submit {
+        .form-group select option {
+            background: var(--primary-dark);
+        }
+        
+        .submit-btn {
             width: 100%;
             padding: 1rem;
-            background: var(--primary);
-            color: white;
+            background: var(--gradient-cyan);
+            color: var(--primary-dark);
             border: none;
             border-radius: 10px;
             font-size: 1rem;
-            font-weight: 600;
+            font-weight: 700;
             cursor: pointer;
             transition: all 0.3s;
         }
         
-        .form-submit:hover {
-            background: var(--primary-dark);
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.4);
+        }
+        
+        .form-note {
+            text-align: center;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-top: 1rem;
+        }
+        
+        /* Dynasty Section */
+        .dynasty-section {
+            padding: 4rem 2rem;
+            background: linear-gradient(180deg, #0D2847 0%, var(--primary-dark) 100%);
+        }
+        
+        .dynasty-title {
+            text-align: center;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .dynasty-subtitle {
+            text-align: center;
+            color: var(--accent-gold);
+            margin-bottom: 3rem;
+        }
+        
+        .dynasty-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .dynasty-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 15px;
+            padding: 2rem;
+        }
+        
+        .dynasty-card-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .dynasty-card-title {
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--accent-cyan);
+        }
+        
+        .dynasty-card-text {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+            line-height: 1.6;
+        }
+        
+        .dynasty-card-quote {
+            font-style: italic;
+            color: var(--accent-gold);
+            margin-top: 1rem;
+            font-size: 0.875rem;
         }
         
         /* Footer */
         footer {
-            padding: 4rem 2rem;
+            padding: 3rem 2rem;
             text-align: center;
-            border-top: 1px solid var(--border);
+            background: var(--primary-dark);
+            border-top: 1px solid var(--border-color);
         }
         
         .footer-logo {
-            font-size: 2rem;
-            font-weight: 900;
-            color: var(--primary);
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5rem;
+            color: var(--accent-cyan);
             margin-bottom: 1rem;
         }
         
         .footer-tagline {
-            color: var(--accent);
+            color: var(--accent-gold);
             font-size: 1.25rem;
-            font-weight: 600;
-            margin-bottom: 2rem;
-        }
-        
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-bottom: 2rem;
-            flex-wrap: wrap;
-        }
-        
-        .footer-links a {
-            color: var(--text-muted);
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        
-        .footer-links a:hover {
-            color: var(--primary);
+            margin-bottom: 1rem;
         }
         
         .footer-copyright {
@@ -411,197 +579,316 @@
             font-size: 0.875rem;
         }
         
-        /* Mobile Responsive */
+        .footer-mic-drop {
+            margin-top: 2rem;
+            font-size: 0.875rem;
+            color: var(--text-muted);
+        }
+        
+        /* Responsive */
         @media (max-width: 768px) {
-            nav {
-                padding: 1rem;
-            }
-            
-            .nav-links {
-                display: none;
-            }
-            
-            .hero {
-                padding: 5rem 1rem 3rem;
-            }
-            
-            .hero h1 {
-                font-size: 2rem;
-            }
-            
-            .hero p {
-                font-size: 1rem;
-            }
-            
-            .hero-buttons {
+            header {
                 flex-direction: column;
+                gap: 1rem;
             }
             
-            .btn {
+            .nav-buttons {
                 width: 100%;
-                text-align: center;
+                justify-content: center;
             }
             
-            .waitlist-form {
-                padding: 2rem 1.5rem;
+            .status-bar {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            .countdown-timer {
+                flex-wrap: wrap;
+            }
+            
+            .countdown-number {
+                font-size: 2rem;
+                min-width: 60px;
             }
         }
     </style>
 </head>
 <body>
-    <div class="bg-animation"></div>
+    <!-- Top Banner -->
+    <div class="top-banner">THE FUTURE OF ATHLETE SUCCESS</div>
     
-    <!-- Navigation -->
-    <nav>
-        <a href="/" class="logo">🦁 ATHLYNX<span>AI</span></a>
-        <ul class="nav-links">
-            <li><a href="#features">Features</a></li>
-            <li><a href="#waitlist">Join Waitlist</a></li>
-            <li><a href="/api/docs">API Docs</a></li>
-        </ul>
-        <a href="#waitlist" class="nav-cta">Get Early Access</a>
-    </nav>
+    <!-- Header -->
+    <header>
+        <div class="logo-container">
+            <div class="logo">
+                <span class="logo-icon">🦁</span>
+                <div>
+                    <div class="logo-text">ATHLYNX</div>
+                    <div class="logo-tagline">The Athlete's Playbook</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="parent-company">
+            🏢 PARENT COMPANY: <a href="https://dozierholdingsgroup.com">Dozier Holdings Group</a>
+        </div>
+        
+        <div class="nav-buttons">
+            <a href="/founders" class="btn btn-founders">👥 Founders</a>
+            <a href="/portal" class="btn btn-portal">◎ Portal Login</a>
+        </div>
+    </header>
+    
+    <!-- Status Bar -->
+    <div class="status-bar">
+        <div class="status-item">
+            <span class="status-dot"></span>
+            <span>LIVE PLATFORM</span>
+        </div>
+        <div class="status-item">HIPAA-compliant</div>
+        <div class="status-item">Protecting our precious cargo</div>
+    </div>
+    
+    <!-- Update Notice -->
+    <div class="update-notice">
+        SITE UPDATING LIVE DAILY - Please be patient with us while we add future updates and apps!
+    </div>
     
     <!-- Hero Section -->
     <section class="hero">
-        <span class="hero-badge">🚀 Launching February 1, 2026</span>
-        <h1>The Future of<br>College Athletics</h1>
-        <p>ATHLYNX AI is the ultimate platform for college athletes. Manage your NIL deals, navigate the transfer portal, and build your brand. Dreams Do Come True 2026!</p>
-        
-        <div class="hero-buttons">
-            <a href="#waitlist" class="btn btn-primary">Join VIP Waitlist</a>
-            <a href="#features" class="btn btn-secondary">Learn More</a>
+        <div class="hero-card">
+            <div class="hero-logo">
+                <h1>🦁 ATHLYNX</h1>
+                <p>The Athlete's Playbook</p>
+            </div>
+            <div class="trainer-badge">👑 THE LEGENDARY TRAINER</div>
+            <p class="hero-tagline">The mastermind behind the champion.</p>
+            <p class="hero-subtitle">Building champions, training winners, and creating empires.</p>
         </div>
+    </section>
+    
+    <!-- Vision Section -->
+    <section class="vision-section">
+        <div class="vision-badge">🎬 THE VISION</div>
+        <h2 class="vision-title">DREAMS DO COME TRUE</h2>
+        <p class="vision-subtitle">★ ATHLYNX: The Perfect Storm ★</p>
+    </section>
+    
+    <!-- VIP Code Section -->
+    <section class="vip-code-section">
+        <div class="vip-code-box" onclick="showVIPModal()">
+            <h3>HAVE A VIP CODE?</h3>
+            <p>TAP HERE TO ENTER</p>
+        </div>
+    </section>
+    
+    <!-- 10 Apps Section -->
+    <section class="apps-section">
+        <h2 class="section-title">10 Powerful Apps. One Platform. Unlimited Potential.</h2>
+        <p class="section-subtitle">Everything you need to dominate your athletic career</p>
         
-        <div class="waitlist-counter">
-            <span class="counter-number" id="waitlist-count">{{ waitlist_count or 0 }}</span>
-            <span class="counter-label">Athletes on the VIP Waitlist (10,000 Founding Members)</span>
-            <div class="counter-progress">
-                <div class="counter-progress-bar" style="width: {{ (waitlist_count or 0) / 100 }}%"></div>
+        <div class="apps-grid">
+            <div class="app-card">
+                <div class="app-icon">🏠</div>
+                <div class="app-name">Portal</div>
+            </div>
+            <div class="app-card">
+                <div class="app-icon">💬</div>
+                <div class="app-name">Messenger</div>
+            </div>
+            <div class="app-card">
+                <div class="app-icon">💎</div>
+                <div class="app-name">Diamond Grind</div>
+            </div>
+            <div class="app-card">
+                <div class="app-icon">⚔️</div>
+                <div class="app-name">Warriors Playbook</div>
+            </div>
+            <div class="app-card">
+                <div class="app-icon">🔄</div>
+                <div class="app-name">Transfer Portal</div>
+            </div>
+            <div class="app-card">
+                <div class="app-icon">💰</div>
+                <div class="app-name">NIL Vault</div>
+            </div>
+            <div class="app-card">
+                <div class="app-icon">🤖</div>
+                <div class="app-name">AI Sales</div>
+            </div>
+            <div class="app-card">
+                <div class="app-icon">✝️</div>
+                <div class="app-name">Faith</div>
+            </div>
+            <div class="app-card">
+                <div class="app-icon">🎯</div>
+                <div class="app-name">AI Recruiter</div>
+            </div>
+            <div class="app-card">
+                <div class="app-icon">📱</div>
+                <div class="app-name">AI Content</div>
             </div>
         </div>
     </section>
     
-    <!-- Features Section -->
-    <section class="features" id="features">
-        <h2 class="section-title">Everything You Need</h2>
-        <p class="section-subtitle">One platform to manage your entire athletic career</p>
-        
-        <div class="features-grid">
-            <div class="feature-card">
-                <div class="feature-icon">💰</div>
-                <h3>NIL Vault</h3>
-                <p>Track and manage all your Name, Image, and Likeness deals in one secure place. Get matched with brands that fit your personal brand.</p>
+    <!-- Countdown Section -->
+    <section class="countdown-section">
+        <div class="countdown-card">
+            <div class="countdown-logo">
+                <h2>🦁 ATHLYNX</h2>
+                <p>THE ATHLETE'S PLAYBOOK</p>
             </div>
             
-            <div class="feature-card">
-                <div class="feature-icon">🔄</div>
-                <h3>Transfer Portal</h3>
-                <p>Navigate the transfer portal with confidence. Connect with coaches, explore opportunities, and make informed decisions about your future.</p>
+            <p class="countdown-label">LAUNCHING IN</p>
+            <p class="countdown-date">FEBRUARY 1, 2026</p>
+            
+            <div class="countdown-timer" id="countdown">
+                <div class="countdown-item">
+                    <span class="countdown-number" id="days">{{ countdown.days }}</span>
+                    <span class="countdown-unit">Days</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="hours">{{ countdown.hours }}</span>
+                    <span class="countdown-unit">Hrs</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="minutes">{{ countdown.minutes }}</span>
+                    <span class="countdown-unit">Min</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="seconds">{{ countdown.seconds }}</span>
+                    <span class="countdown-unit">Sec</span>
+                </div>
             </div>
             
-            <div class="feature-card">
-                <div class="feature-icon">📱</div>
-                <h3>Social Feed</h3>
-                <p>Build your personal brand with our athlete-focused social platform. Share highlights, connect with fans, and grow your following.</p>
-            </div>
-            
-            <div class="feature-card">
-                <div class="feature-icon">📊</div>
-                <h3>Analytics Dashboard</h3>
-                <p>Real-time insights into your performance, engagement, and NIL value. Make data-driven decisions about your career.</p>
-            </div>
-            
-            <div class="feature-card">
-                <div class="feature-icon">💬</div>
-                <h3>Direct Messaging</h3>
-                <p>Secure, verified messaging with coaches, brands, and agents. No spam, no scams - just real opportunities.</p>
-            </div>
-            
-            <div class="feature-card">
-                <div class="feature-icon">🛡️</div>
-                <h3>Military-Grade Security</h3>
-                <p>Your data is protected with enterprise-level security. Triple-channel verification keeps your account safe.</p>
+            <div class="founding-spots">
+                FOUNDING MEMBER SPOTS<br>
+                <strong>LIMITED TO {{ founding_spots | default(10000) }}</strong>
             </div>
         </div>
     </section>
     
-    <!-- Waitlist Section -->
-    <section class="waitlist-section" id="waitlist">
-        <h2 class="section-title">Join the VIP Waitlist</h2>
-        <p class="section-subtitle">Be one of the first 10,000 founding members</p>
-        
+    <!-- Waitlist Form -->
+    <section class="waitlist-section">
         <form class="waitlist-form" id="waitlist-form">
+            <h3 class="form-title">Join the VIP Waitlist</h3>
+            
             <div class="form-group">
-                <label for="full_name">Full Name *</label>
-                <input type="text" id="full_name" name="full_name" required placeholder="Your full name">
+                <input type="text" id="full_name" name="full_name" placeholder="Full Name" required>
             </div>
             
             <div class="form-group">
-                <label for="email">Email *</label>
-                <input type="email" id="email" name="email" required placeholder="your@email.com">
+                <input type="email" id="email" name="email" placeholder="Email Address" required>
             </div>
             
             <div class="form-group">
-                <label for="phone">Phone Number</label>
-                <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567">
+                <input type="tel" id="phone" name="phone" placeholder="Phone Number (with country code)">
             </div>
             
             <div class="form-group">
-                <label for="role">I am a...</label>
                 <select id="role" name="role">
-                    <option value="">Select your role</option>
-                    <option value="athlete">College Athlete</option>
-                    <option value="high_school">High School Athlete</option>
-                    <option value="coach">Coach</option>
-                    <option value="agent">Agent/Representative</option>
-                    <option value="brand">Brand/Business</option>
-                    <option value="fan">Fan/Supporter</option>
+                    <option value="">Select Your Role</option>
+                    <option value="Athlete">Athlete</option>
+                    <option value="Parent">Parent</option>
+                    <option value="Coach">Coach</option>
+                    <option value="Brand">Brand</option>
                 </select>
             </div>
             
             <div class="form-group">
-                <label for="sport">Primary Sport</label>
                 <select id="sport" name="sport">
-                    <option value="">Select your sport</option>
-                    <option value="football">Football</option>
-                    <option value="basketball">Basketball</option>
-                    <option value="baseball">Baseball</option>
-                    <option value="soccer">Soccer</option>
-                    <option value="volleyball">Volleyball</option>
-                    <option value="softball">Softball</option>
-                    <option value="track">Track & Field</option>
-                    <option value="swimming">Swimming</option>
-                    <option value="tennis">Tennis</option>
-                    <option value="golf">Golf</option>
-                    <option value="other">Other</option>
+                    <option value="">Select Your Sport</option>
+                    <option value="Baseball">Baseball</option>
+                    <option value="Football">Football</option>
+                    <option value="Basketball">Basketball</option>
+                    <option value="Soccer">Soccer</option>
+                    <option value="Track & Field">Track & Field</option>
+                    <option value="Volleyball">Volleyball</option>
+                    <option value="Other">Other</option>
                 </select>
             </div>
             
-            <button type="submit" class="form-submit">🦁 Join the Pride</button>
+            <button type="submit" class="submit-btn">🦁 CLAIM MY VIP SPOT</button>
+            
+            <p class="form-note">No credit card required. By signing up, you agree to receive updates about ATHLYNX.</p>
         </form>
+    </section>
+    
+    <!-- Dynasty Section -->
+    <section class="dynasty-section">
+        <h2 class="dynasty-title">THE PERFECT STORM</h2>
+        <p class="dynasty-subtitle">Building a Dynasty - FROM NOTHING TO EVERYTHING</p>
+        
+        <div class="dynasty-grid">
+            <div class="dynasty-card">
+                <div class="dynasty-card-icon">👔</div>
+                <h3 class="dynasty-card-title">The Visionary Owner</h3>
+                <p class="dynasty-card-text">Robert Kraft bought a struggling franchise and built an empire. Chad A. Dozier is doing the same with ATHLYNX.</p>
+                <p class="dynasty-card-quote">"I saw what others couldn't see. A platform that serves athletes, not exploits them."</p>
+            </div>
+            
+            <div class="dynasty-card">
+                <div class="dynasty-card-icon">🧠</div>
+                <h3 class="dynasty-card-title">The System</h3>
+                <p class="dynasty-card-text">Bill Belichick's system made average players elite. Manus AI is our system—executing strategy with precision.</p>
+                <p class="dynasty-card-quote">"Do your job." — Our AI does exactly that, 24/7.</p>
+            </div>
+            
+            <div class="dynasty-card">
+                <div class="dynasty-card-icon">🐐</div>
+                <h3 class="dynasty-card-title">The Underdog</h3>
+                <p class="dynasty-card-text">Tom Brady was pick #199. Irrelevant. Now he's the GOAT. ATHLYNX is our Tom Brady—the underdog becoming legendary.</p>
+                <p class="dynasty-card-quote">"Everyone counted us out. That was their mistake."</p>
+            </div>
+        </div>
     </section>
     
     <!-- Footer -->
     <footer>
         <div class="footer-logo">🦁 ATHLYNX AI</div>
         <div class="footer-tagline">Dreams Do Come True 2026!</div>
-        
-        <div class="footer-links">
-            <a href="/api/docs">API Documentation</a>
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms of Service</a>
-            <a href="#">Contact Us</a>
-        </div>
-        
-        <p class="footer-copyright">
-            © 2026 ATHLYNX AI Corporation. All rights reserved.<br>
-            Athlynx-AI-Start-Up-Launch-All-Phase-Beginning-Phase-1-2026-#14
-        </p>
+        <p class="footer-copyright">© 2026 Dozier Holdings Group, LLC. All rights reserved.</p>
+        <p class="footer-copyright">Athlynx-AI-VIP-Start-Up-Launch-2026-#14</p>
+        <p class="footer-mic-drop">MIC DROP. FOCKER OUT. 🎤</p>
     </footer>
     
+    <!-- VIP Modal -->
+    <div id="vip-modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:9999; justify-content:center; align-items:center;">
+        <div style="background:var(--card-bg); padding:2rem; border-radius:20px; max-width:400px; text-align:center; border:2px solid var(--accent-cyan);">
+            <h3 style="margin-bottom:1rem;">Enter VIP Code</h3>
+            <input type="text" id="vip-code-input" placeholder="Enter your VIP code" style="width:100%; padding:1rem; border-radius:10px; border:1px solid var(--border-color); background:var(--primary-dark); color:white; margin-bottom:1rem;">
+            <button onclick="verifyVIPCode()" style="width:100%; padding:1rem; background:var(--gradient-cyan); border:none; border-radius:10px; color:var(--primary-dark); font-weight:700; cursor:pointer;">Verify Code</button>
+            <button onclick="closeVIPModal()" style="width:100%; padding:0.5rem; background:transparent; border:none; color:var(--text-muted); cursor:pointer; margin-top:0.5rem;">Cancel</button>
+        </div>
+    </div>
+    
     <script>
-        // Waitlist form submission
+        // Countdown Timer
+        function updateCountdown() {
+            const launchDate = new Date('February 1, 2026 00:00:00').getTime();
+            const now = new Date().getTime();
+            const distance = launchDate - now;
+            
+            if (distance < 0) {
+                document.getElementById('countdown').innerHTML = '<h2>🚀 WE ARE LIVE!</h2>';
+                return;
+            }
+            
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            document.getElementById('days').textContent = days;
+            document.getElementById('hours').textContent = hours;
+            document.getElementById('minutes').textContent = minutes;
+            document.getElementById('seconds').textContent = seconds;
+        }
+        
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+        
+        // Waitlist Form
         document.getElementById('waitlist-form').addEventListener('submit', async (e) => {
             e.preventDefault();
             
@@ -614,25 +901,19 @@
             };
             
             try {
-                const response = await fetch('/api/waitlist/join', {
+                const response = await fetch('/api/waitlist', {
                     method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
+                    headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(formData)
                 });
                 
                 const data = await response.json();
                 
                 if (data.success) {
-                    alert(`🦁 Welcome to ATHLYNX!\n\n${data.message}\n\nYour referral code: ${data.referral_code}`);
+                    alert(`🦁 Welcome to ATHLYNX!\n\n${data.message}\n\nYour position: #${data.position}`);
                     document.getElementById('waitlist-form').reset();
-                    
-                    // Update counter
-                    const counter = document.getElementById('waitlist-count');
-                    counter.textContent = data.position;
                 } else {
-                    alert('Error: ' + (data.detail || data.message || 'Something went wrong'));
+                    alert('Error: ' + (data.detail || 'Something went wrong'));
                 }
             } catch (error) {
                 console.error('Error:', error);
@@ -640,27 +921,43 @@
             }
         });
         
-        // Fetch current waitlist count
-        async function updateWaitlistCount() {
-            try {
-                const response = await fetch('/api/waitlist/count');
-                const data = await response.json();
-                
-                const counter = document.getElementById('waitlist-count');
-                counter.textContent = data.count;
-                
-                const progressBar = document.querySelector('.counter-progress-bar');
-                progressBar.style.width = `${data.percent_full}%`;
-            } catch (error) {
-                console.error('Error fetching waitlist count:', error);
-            }
+        // VIP Modal
+        function showVIPModal() {
+            document.getElementById('vip-modal').style.display = 'flex';
         }
         
-        // Update count on page load
-        updateWaitlistCount();
+        function closeVIPModal() {
+            document.getElementById('vip-modal').style.display = 'none';
+        }
         
-        // Update count every 30 seconds
-        setInterval(updateWaitlistCount, 30000);
+        async function verifyVIPCode() {
+            const code = document.getElementById('vip-code-input').value;
+            
+            if (!code) {
+                alert('Please enter a VIP code');
+                return;
+            }
+            
+            try {
+                const response = await fetch('/api/vip/verify', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ code: code })
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    alert('🦁 VIP Access Granted! Welcome to ATHLYNX!');
+                    closeVIPModal();
+                    window.location.href = '/portal';
+                } else {
+                    alert('Invalid VIP code. Please try again.');
+                }
+            } catch (error) {
+                alert('Error verifying code. Please try again.');
+            }
+        }
     </script>
 </body>
 </html>

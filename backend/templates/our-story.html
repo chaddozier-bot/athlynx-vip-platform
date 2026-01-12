@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Story - Family is Everything | ATHLYNX</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-dark: #0A1628;
+            --primary-blue: #0066FF;
+            --accent-cyan: #00D4FF;
+            --accent-gold: #FFD700;
+            --accent-orange: #FF6B35;
+            --gradient-cyan: linear-gradient(135deg, #00D4FF 0%, #0099FF 100%);
+            --text-white: #FFFFFF;
+            --text-muted: #A0B4C8;
+            --border-color: #1E3A5F;
+            --card-bg: rgba(30, 58, 95, 0.5);
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--primary-dark);
+            color: var(--text-white);
+            min-height: 100vh;
+        }
+        
+        /* Back Button */
+        .back-btn {
+            position: fixed;
+            top: 1rem;
+            left: 1rem;
+            background: var(--card-bg);
+            color: var(--text-white);
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            z-index: 100;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s;
+        }
+        
+        .back-btn:hover {
+            background: var(--accent-cyan);
+            color: var(--primary-dark);
+        }
+        
+        /* Our Story Badge */
+        .story-badge {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(255, 107, 53, 0.2);
+            color: var(--accent-orange);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            z-index: 100;
+        }
+        
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 4rem 2rem;
+            background: radial-gradient(ellipse at center, #0D2847 0%, var(--primary-dark) 70%);
+        }
+        
+        .home-badge {
+            background: rgba(255, 215, 0, 0.2);
+            color: var(--accent-gold);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.875rem;
+            margin-bottom: 2rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .hero h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .hero h1 span {
+            color: var(--accent-orange);
+        }
+        
+        .hero-subtitle {
+            color: var(--text-muted);
+            font-size: 1.25rem;
+            max-width: 600px;
+            line-height: 1.6;
+            margin-bottom: 3rem;
+        }
+        
+        /* Family Image */
+        .family-image {
+            max-width: 800px;
+            width: 100%;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            margin-bottom: 1rem;
+        }
+        
+        .family-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .family-caption {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+        }
+        
+        /* Vision Section */
+        .vision-section {
+            padding: 4rem 2rem;
+            text-align: center;
+            background: var(--primary-dark);
+        }
+        
+        .vision-badge {
+            background: rgba(255, 215, 0, 0.2);
+            color: var(--accent-gold);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+        
+        .vision-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2rem;
+            color: var(--accent-gold);
+        }
+        
+        /* Founder Quote */
+        .founder-section {
+            padding: 4rem 2rem;
+            background: linear-gradient(180deg, var(--primary-dark) 0%, #0D2847 100%);
+        }
+        
+        .founder-card {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 3rem;
+            border: 1px solid var(--border-color);
+        }
+        
+        .founder-badge {
+            background: var(--gradient-cyan);
+            color: var(--primary-dark);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 1.5rem;
+        }
+        
+        .founder-quote {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: var(--text-muted);
+            font-style: italic;
+            border-left: 4px solid var(--accent-cyan);
+            padding-left: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .founder-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .founder-text {
+            color: var(--text-muted);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+        
+        /* For Mom Section */
+        .mom-section {
+            padding: 4rem 2rem;
+            background: var(--primary-dark);
+            text-align: center;
+        }
+        
+        .mom-card {
+            max-width: 600px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.2) 0%, rgba(255, 215, 0, 0.1) 100%);
+            border-radius: 20px;
+            padding: 3rem;
+            border: 2px solid var(--accent-orange);
+        }
+        
+        .mom-badge {
+            background: var(--accent-orange);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.875rem;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+        
+        .mom-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .mom-text {
+            color: var(--text-muted);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+        
+        .mom-quote {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.25rem;
+            color: var(--accent-gold);
+        }
+        
+        /* Empire Section */
+        .empire-section {
+            padding: 4rem 2rem;
+            background: linear-gradient(180deg, #0D2847 0%, var(--primary-dark) 100%);
+        }
+        
+        .empire-title {
+            text-align: center;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .empire-subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            margin-bottom: 3rem;
+        }
+        
+        .empire-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .empire-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 15px;
+            padding: 1.5rem;
+        }
+        
+        .empire-card h3 {
+            color: var(--accent-cyan);
+            margin-bottom: 0.75rem;
+        }
+        
+        .empire-card p {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+        }
+        
+        /* Values Section */
+        .values-section {
+            padding: 4rem 2rem;
+            background: var(--primary-dark);
+        }
+        
+        .values-title {
+            text-align: center;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .values-subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            margin-bottom: 3rem;
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .value-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .value-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .value-title {
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            color: var(--accent-cyan);
+        }
+        
+        .value-text {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+            line-height: 1.6;
+        }
+        
+        /* Signature Quote */
+        .signature-section {
+            padding: 4rem 2rem;
+            text-align: center;
+            background: linear-gradient(180deg, var(--primary-dark) 0%, #0D2847 100%);
+        }
+        
+        .signature-quote {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5rem;
+            color: var(--accent-gold);
+            margin-bottom: 1rem;
+        }
+        
+        .signature-name {
+            color: var(--text-muted);
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 4rem 2rem;
+            text-align: center;
+            background: var(--primary-dark);
+        }
+        
+        .cta-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .cta-text {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .cta-btn {
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .cta-btn-primary {
+            background: var(--gradient-cyan);
+            color: var(--primary-dark);
+        }
+        
+        .cta-btn-secondary {
+            background: transparent;
+            color: var(--text-white);
+            border: 2px solid var(--accent-gold);
+        }
+        
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
+        }
+        
+        /* Footer */
+        footer {
+            padding: 3rem 2rem;
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+        }
+        
+        .footer-text {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+        }
+        
+        .mic-drop {
+            margin-top: 1rem;
+            color: var(--text-muted);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .founder-card,
+            .mom-card {
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Back Button -->
+    <a href="/" class="back-btn">← Back to Home</a>
+    
+    <!-- Story Badge -->
+    <div class="story-badge">❤️ Our Story</div>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="home-badge">🏠 This is Home</div>
+        <h1>Family is <span>Everything</span></h1>
+        <p class="hero-subtitle">Behind every line of code, every feature, every dream we chase — there's a family. There's a mother. There's a reason why we wake up every day and fight for something bigger than ourselves.</p>
+        
+        <div class="family-image">
+            <img src="/static/images/dozier-family.jpg" alt="The Dozier Family" onerror="this.src='https://via.placeholder.com/800x500/0D2847/00D4FF?text=The+Dozier+Family'">
+        </div>
+        <p class="family-caption">The Dozier Family — The foundation of everything we build</p>
+    </section>
+    
+    <!-- Vision Section -->
+    <section class="vision-section">
+        <div class="vision-badge">🎬 THE VISION</div>
+        <h2 class="vision-title">DREAMS DO TRULY COME TRUE</h2>
+    </section>
+    
+    <!-- Founder Section -->
+    <section class="founder-section">
+        <div class="founder-card">
+            <div class="founder-badge">★ The Founder's Journey ★</div>
+            
+            <blockquote class="founder-quote">
+                "Two of our founders are cancer patients in remission. The mom of another founder is also a cancer patient in remission. This isn't just business. This is personal. This is our legacy."
+            </blockquote>
+            
+            <h3 class="founder-title">Why We Built This</h3>
+            
+            <p class="founder-text">
+                My name is Chad A. Dozier. I'm the Chairman and President of Dozier Holdings Group, and the founder of ATHLYNX AI. But before any of those titles, I'm a son. A family man. Someone who watched his mother fight cancer and win.
+            </p>
+            
+            <p class="founder-text">
+                When you watch someone you love fight for their life, everything changes. The small things don't matter anymore. What matters is family. What matters is legacy. What matters is building something that helps others the way we wished someone could have helped us.
+            </p>
+            
+            <p class="founder-text">
+                That's why we built Villa Agape — a home-away-from-home for cancer patients in remission. With clean air, good water, IoT health monitoring, and most importantly — love. Agape means unconditional love. That's what we give.
+            </p>
+            
+            <p class="founder-text">
+                That's why we built ATHLYNX — because every athlete, every worker, every person deserves a platform that treats them like the star they are. Not a number. Not a commodity. A human being with dreams, with family, with a story worth telling.
+            </p>
+        </div>
+    </section>
+    
+    <!-- For Mom Section -->
+    <section class="mom-section">
+        <div class="mom-card">
+            <div class="mom-badge">For Mom</div>
+            <h3 class="mom-title">The Heart of Everything</h3>
+            
+            <p class="mom-text">
+                Mom, this is for you. Every late night coding. Every early morning meeting. Every dream we chase. It's all because you taught me that love conquers all. That family comes first. That we fight for what matters.
+            </p>
+            
+            <p class="mom-text">
+                You beat cancer. You showed me what strength really looks like. Now I'm building something that will help others like you — people who need a place of healing, a community of love, a home away from home.
+            </p>
+            
+            <p class="mom-quote">"Tomorrow, dreams will come true."</p>
+        </div>
+    </section>
+    
+    <!-- Empire Section -->
+    <section class="empire-section">
+        <h2 class="empire-title">The Empire We're Building</h2>
+        <p class="empire-subtitle">12 companies. 1 family. Infinite possibilities. All driven by love.</p>
+        
+        <div class="empire-grid">
+            <div class="empire-card">
+                <h3>Technology</h3>
+                <p>VC Technologies, Data Centers, The VIRT, VC Energy</p>
+            </div>
+            <div class="empire-card">
+                <h3>Real Estate</h3>
+                <p>Villa Agape, Pisces Resort, Venus Venue, Pomodoro</p>
+            </div>
+            <div class="empire-card">
+                <h3>Sports Tech</h3>
+                <p>ATHLYNX AI - The complete athlete ecosystem</p>
+            </div>
+            <div class="empire-card">
+                <h3>Trading</h3>
+                <p>The Silk Road Trading - Global sourcing</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Values Section -->
+    <section class="values-section">
+        <h2 class="values-title">What We Stand For</h2>
+        <p class="values-subtitle">The values that guide every decision we make</p>
+        
+        <div class="values-grid">
+            <div class="value-card">
+                <div class="value-icon">✝️</div>
+                <h3 class="value-title">Faith</h3>
+                <p class="value-text">We believe in something greater than ourselves. Faith guides our path and gives us strength.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">🇺🇸</div>
+                <h3 class="value-title">Country</h3>
+                <p class="value-text">We honor those who serve. Veterans, first responders, and everyday heroes who make America great.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">👨‍👩‍👧‍👦</div>
+                <h3 class="value-title">Family</h3>
+                <p class="value-text">Everything we build is for our families. Present and future. Blood and chosen.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Signature Quote -->
+    <section class="signature-section">
+        <p class="signature-quote">"Faith. Country. Family. Leadership."</p>
+        <p class="signature-name">— Chad A. Dozier</p>
+    </section>
+    
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <h2 class="cta-title">Join Our Family</h2>
+        <p class="cta-text">Whether you're an athlete, a veteran, a blue-collar worker, or just someone with a dream — there's a place for you here. This is home.</p>
+        
+        <div class="cta-buttons">
+            <a href="/#waitlist-form" class="cta-btn cta-btn-primary">Get Early Access</a>
+            <a href="/veterans" class="cta-btn cta-btn-secondary">Veterans Program</a>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <p class="footer-text">© 2026 Dozier Holdings Group, LLC. All rights reserved.</p>
+        <p class="mic-drop">MIC DROP. FOCKER OUT. 🎤</p>
+    </footer>
+</body>
+</html>
